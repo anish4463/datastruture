@@ -1,0 +1,229 @@
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+void insertatbeg(struct node*head);
+void insertatend(struct node*head);
+void delatbeg(struct node*head);
+void delatend(struct node*head);
+void display(struct node*head);
+void traverse(struct node*head);
+ struct node
+ {
+ int data;
+ struct node*next;
+ }*head=NULL;
+int main()
+{
+int choice;
+clrscr();
+
+while(1)
+{
+
+printf("\n1:INSERT AT BEGINNING \t 2:INSERT AT END \t3:DELETE AT BEGINNING \t4: DELELTE AT END\t5:DISPLAY \t6:TRAVERSE \t7:EXIT\n");
+printf("ENTER THE CHOICE:");
+scanf("%d",&choice);
+
+switch(choice)
+{
+case 1:insertatbeg(head);
+break;
+case 2:insertatend(head);
+break;
+case 3:delatbeg(head);
+break;
+case 4:delatend(head);
+break;
+case 5:display(head);
+break;
+case 6:traverse(head);
+break;
+case 7:exit(0);
+break;
+default : printf("INVALID CHOICE");
+break;
+
+    }
+   }
+  }
+ void insertatbeg(struct node*head)
+ {
+ struct node*newnode;
+ newnode=(struct node*)malloc(sizeof(struct node));
+ printf("ENTER THE ELEMENT TO ENTER :");
+ scanf("%d",&newnode->data);
+ head =newnode;
+ newnode->next=head;
+ }
+ void traverse(struct node*head)
+ {
+  struct node*temp;
+  int count;
+  temp=head;
+  while(temp!=NULL)
+  {
+  count++;
+  temp=temp->next;
+  }
+ printf("NUMBER OF THE NODES IS: %d",count);
+ }
+ void insertatend(struct node*head)
+ {
+ struct node*newnode,*temp;
+  newnode=(struct node*)malloc(sizeof(struct node));
+ printf("ENTER THE ELEMENT TO ENTER :");
+ scanf("%d",&newnode->data);
+ temp=head;
+  while(temp->next!=NULL)
+  {
+  temp=temp->next;
+  }
+  temp->next=newnode;
+  newnode->next=NULL;
+  return head;
+
+ }
+ void delatend(struct node*head)
+ {
+ struct node*temp,*prev;
+ temp=head;
+  while(temp->next!=NULL)
+  {
+  prev=temp;
+  temp=temp->next;
+  }
+  prev->next=NULL;
+  free(temp);
+  }
+ void delatbeg(struct node*head)
+ {
+ struct node*temp;
+ temp=head;
+ head=temp->next;
+ free(temp);
+ }
+ void display(struct node *head)
+ {
+ struct node *ptr;
+ ptr=head;
+ while(ptr->next!=NULL){
+ printf("%d ",ptr->data);
+ ptr=ptr->next;
+ }
+ printf("%d ",ptr->data);
+ }
+
+#include<stdio.h>
+#include<conio.h>
+#include<stdlib.h>
+void insertatbeg(struct node*head);
+void insertatend(struct node*head);
+void delatbeg(struct node*head);
+void delatend(struct node*head);
+void display(struct node*head);
+void traverse(struct node*head);
+ struct node
+ {
+ int data;
+ struct node*next;
+ }*head=NULL;
+int main()
+{
+int choice;
+clrscr();
+
+while(1)
+{
+
+printf("\n1:INSERT AT BEGINNING \t 2:INSERT AT END \t3:DELETE AT BEGINNING \t4: DELELTE AT END\t5:DISPLAY \t6:TRAVERSE \t7:EXIT\n");
+printf("ENTER THE CHOICE:");
+scanf("%d",&choice);
+
+switch(choice)
+{
+case 1:insertatbeg(head);
+break;
+case 2:insertatend(head);
+break;
+case 3:delatbeg(head);
+break;
+case 4:delatend(head);
+break;
+case 5:display(head);
+break;
+case 6:traverse(head);
+break;
+case 7:exit(0);
+break;
+default : printf("INVALID CHOICE");
+break;
+
+    }
+   }
+  }
+ void insertatbeg(struct node*head)
+ {
+ struct node*newnode;
+ newnode=(struct node*)malloc(sizeof(struct node));
+ printf("ENTER THE ELEMENT TO ENTER :");
+ scanf("%d",&newnode->data);
+ head =newnode;
+ newnode->next=head;
+ }
+ void traverse(struct node*head)
+ {
+  struct node*temp;
+  int count;
+  temp=head;
+  while(temp!=NULL)
+  {
+  count++;
+  temp=temp->next;
+  }
+ printf("NUMBER OF THE NODES IS: %d",count);
+ }
+ void insertatend(struct node*head)
+ {
+ struct node*newnode,*temp;
+  newnode=(struct node*)malloc(sizeof(struct node));
+ printf("ENTER THE ELEMENT TO ENTER :");
+ scanf("%d",&newnode->data);
+ temp=head;
+  while(temp->next!=NULL)
+  {
+  temp=temp->next;
+  }
+  temp->next=newnode;
+  newnode->next=NULL;
+  return head;
+
+ }
+ void delatend(struct node*head)
+ {
+ struct node*temp,*prev;
+ temp=head;
+  while(temp->next!=NULL)
+  {
+  prev=temp;
+  temp=temp->next;
+  }
+  prev->next=NULL;
+  free(temp);
+  }
+ void delatbeg(struct node*head)
+ {
+ struct node*temp;
+ temp=head;
+ head=temp->next;
+ free(temp);
+ }
+ void display(struct node *head)
+ {
+ struct node *ptr;
+ ptr=head;
+ while(ptr->next!=NULL){
+ printf("%d ",ptr->data);
+ ptr=ptr->next;
+ }
+ printf("%d ",ptr->data);
+ }
